@@ -9,7 +9,7 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className='fixed w-full m-4 bottom-0 flex justify-between bg-white'>
+            <div className='fixed w-full bottom-0 flex justify-between bg-white'>
                 <div className='fixed w-full bottom-0 flex justify-between bg-white'>
                     <textarea id='messageInput'
                         className='flex-grow m-2 py-2 px-4 mr-1 rounded-full border border-gray-300 bg-gray-200 resize-none'
