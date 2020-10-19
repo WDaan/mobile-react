@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 export default class MovieList extends Component {
 
     render() {
-        if (!this.props.movies) return (<div className='pt-6 mb-10 pb-10 bg-gray-800' style={{ height: '94vh' }}></div>)
+        if (!this.props.movies)
+            return (
+                <div className='pt-6 mb-10 pb-10 bg-gray-800 h-screen flex' style={{ height: '94vh' }}>
+                    <h1 className='text-teal-500 text-4xl m-auto' >Start searching...</h1>
+                </div>)
 
         const movies = this.props.movies.map(movie =>
             <Link to={`movie/${movie.imdbID}`} key={movie.Title} className='mx-3 py-5'>
