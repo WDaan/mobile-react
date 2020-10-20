@@ -27,7 +27,7 @@ export default class MovieDetail extends Component {
 
 
     render() {
-        if (!this.state.movie) return null
+        if (!this.state.movie) return (<div className='pt-1 pb-0 bg-gray-800'></div>)
 
         const { Plot, Genre, Title, Poster, imdbRating } = this.state.movie
 

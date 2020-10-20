@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import OMDb from '../services/OMDb'
+import Store from '../store'
 import Search from '../components/Search.jsx'
 import MovieList from '../components/MovieList.jsx'
 
 export default class Home extends Component {
     state = {
-        searchTerm: 'Harry',
+        searchTerm: '',
         movie: null
+    }
+
+    componentDidMount() {
+        this.setState({ movies: Store.getMovies() })
     }
 
     handleSearchValue = (e) => {
@@ -16,13 +21,14 @@ export default class Home extends Component {
         if (e.keyCode == 13) {
             const res = await OMDb.searchMovie(this.state.searchTerm)
             this.setState({ movies: res.Search })
+            Store.saveMovies(res.Search)
         }
     }
 
     startSearch = async (e) => {
         const res = await OMDb.searchMovie(this.state.searchTerm)
         this.setState({ movies: res.Search })
-
+        Store.saveMovies(res.Search)
     }
 
     render() {
