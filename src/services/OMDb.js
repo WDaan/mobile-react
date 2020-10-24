@@ -14,9 +14,8 @@ class OMDb {
             t: title,
             type: 'movie'
         }
-        const data = new URLSearchParams(params)
 
-        return this.axios.get(this.url + `${data.toString()}`)
+        return this.axios.get(this.url, { params })
             .then(res => res.data)
             .catch(e => console.log(e))
 
@@ -29,9 +28,8 @@ class OMDb {
             i: id,
             type: 'movie'
         }
-        const data = new URLSearchParams(params)
 
-        return this.axios.get(this.url + `${data.toString()}`)
+        return this.axios.get(this.url, { params })
             .then(res => res.data)
             .catch(e => console.log(e))
 
@@ -44,12 +42,12 @@ class OMDb {
             s: title,
             type: 'movie'
         }
-        const data = new URLSearchParams(params)
 
-        return this.axios.get(this.url + `${data.toString()}`)
-            .then(res => res.data)
+        return this.axios.get(this.url, {
+            params
+        })
+            .then(res => res.data.Search)
             .catch(e => console.log(e))
-
     }
 }
 
