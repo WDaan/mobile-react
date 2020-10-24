@@ -1,18 +1,17 @@
 class Store {
     constructor() {
         this.state = {
-            movies: []
+            movies: null
         }
     }
 
-    saveMovies(movies){
+    setMovies(movies) {
         this.state.movies = movies
     }
 
-    getMovies(){
+    getMovies() {
         return this.state.movies
     }
-
 }
 
 export default new Store()

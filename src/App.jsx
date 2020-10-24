@@ -15,12 +15,10 @@ export default class App extends Component {
         return (
             <>
                 <Router>
-                    <div>
-                        <Switch>
-                            <Route path='/movie/:id' component={MovieDetail} />
-                            <Route path='/' component={Home} />
-                        </Switch>
-                    </div>
+                    <Switch>
+                        <Route path='/movie/:id' component={MovieDetail} />
+                        <Route path='/' component={Home} />
+                    </Switch>
                 </Router>
             </>
         )
