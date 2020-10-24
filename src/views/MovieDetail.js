@@ -18,8 +18,8 @@ const MovieDetail = () => {
     }, [])
 
     return (
-        <div className='pt-1 pb-0 bg-gray-800'>
-            <Link to='/'>
+        <div className='pt-5 pb-0 bg-gray-800 relative'>
+            <Link to='/' className='fixed z-10 ml-2' >
                 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' className='w-12 h-12 my-1 text-green-100 ml-2'>
                     <path className='text-green-100 fill-current'
                         d='M9.41 11H17a1 1 0 0 1 0 2H9.41l2.3 2.3a1 1 0 1 1-1.42 1.4l-4-4a1 1 0 0 1 0-1.4l4-4a1 1 0 0 1 1.42 1.4L9.4 11z' />

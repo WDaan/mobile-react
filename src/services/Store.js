@@ -1,7 +1,8 @@
 class Store {
     constructor() {
         this.state = {
-            movies: null
+            movies: null,
+            searchTerm: ''
         }
     }
 
@@ -11,6 +12,14 @@ class Store {
 
     getMovies() {
         return this.state.movies
+    }
+
+    getSearchTerm() {
+        return this.state.searchTerm
+    }
+
+    setSearchTerm(searchTerm) {
+        this.state.searchTerm = searchTerm
     }
 }
 

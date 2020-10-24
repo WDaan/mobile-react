@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Store from '../store'
+import Store from '../services/Store'
 import SkeletonMovieList from '../skeletons/SkeletonMovieList'
+import EventEmitter from '../services/EventEmitter'
 
 const MovieList = () => {
 
     const [movieList, setMovies] = useState(null)
 
+    EventEmitter.subscribe('searchComplete', () => setMovies(Store.getMovies()))
+
     useEffect(() => {
         setMovies(Store.getMovies())
-        console.log(movieList)
     })
 
     return (

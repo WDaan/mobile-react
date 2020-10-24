@@ -10,10 +10,7 @@ module.exports = {
     parserOptions: {
         parser: 'babel-eslint',
         "ecmaVersion": 8,
-        'sourceType': 'module',
-        'ecmaFeatures': {
-            'jsx': true
-        }
+        'sourceType': 'module'
     },
     'plugins': [
         'react'
