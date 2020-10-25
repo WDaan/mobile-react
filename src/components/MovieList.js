@@ -12,7 +12,7 @@ const MovieList = () => {
 
     useEffect(() => {
         setMovies(Store.getMovies())
-    })
+    }, [])
 
     return (
         <div className='pt-6 mb-10 pb-10 bg-gray-800' >

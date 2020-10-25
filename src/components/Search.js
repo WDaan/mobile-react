@@ -13,7 +13,7 @@ const Search = () => {
         EventEmitter.dispatch('updateSearch')
     }
     const enterPressed = async e => {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             EventEmitter.dispatch('startSearch')
             const res = await OMDb.searchMovie(searchTerm)
             Store.setMovies(res)
@@ -32,7 +32,7 @@ const Search = () => {
         <div className='fixed w-full bottom-0 flex justify-between bg-white'>
             <div className='fixed w-full bottom-0 flex justify-between bg-white'>
                 <input
-                    className='flex-grow m-2 py-2 px-4 mr-1 rounded-full border border-gray-300 bg-gray-200 resize-none'
+                    className='flex-grow m-2 py-2 px-4 mr-1 rounded-full border border-gray-300 bg-gray-200 resize-none outline-none'
                     onChange={handleSearchValue}
                     onKeyDown={enterPressed}
                     value={searchTerm}
