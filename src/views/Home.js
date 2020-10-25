@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(() => {
         setHasSearch(Store.getSearchTerm())
-    })
+    }, [])
 
     return (
         <div className='bg-gray-800 h-full mt-0' >
