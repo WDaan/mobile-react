@@ -17,8 +17,8 @@ const Home = () => {
         <div className='bg-gray-800 h-full mt-0' >
             {hasSearchValue && (<MovieList />)}
             {!hasSearchValue &&
-                (<div className='h-screen flex flex-col'>
-                    <h2 className='text-3xl text-teal-500 align-center'>Start searching...</h2>
+                (<div className='h-screen flex h-screen'>
+                    <h2 className='text-3xl text-gray-400 m-auto'>Start searching!</h2>
                 </div>)}
             <Search />
         </div>
