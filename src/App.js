@@ -10,16 +10,13 @@ import MovieDetail from './views/MovieDetail'
 
 const App = () => {
     return (
-
         <Router>
             <Switch>
                 <Route path='/movie/:id' component={MovieDetail} />
                 <Route path='/' component={Home} />
             </Switch>
         </Router>
-
     )
-
 }
 
 export default App
