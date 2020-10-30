@@ -6,28 +6,12 @@ class OMDb {
         this.axios = axios.create({
             baseURL: this.url
         })
-
-    }
-
-    fetchMovieByTitle(title) {
-        const params = {
-            t: title,
-            type: 'movie'
-        }
-
-        return this.axios.get(this.url, { params })
-            .then(res => res.data)
-            .catch(e => console.log(e))
-
     }
 
     fetchMovieById(id) {
         if (!id) return
 
-        const params = {
-            i: id,
-            type: 'movie'
-        }
+        const params = { i: id, type: 'movie' }
 
         return this.axios.get(this.url, { params })
             .then(res => res.data)
@@ -38,10 +22,7 @@ class OMDb {
     searchMovie(title) {
         if (!title) return
 
-        const params = {
-            s: title,
-            type: 'movie'
-        }
+        const params = { s: title, type: 'movie' }
 
         return this.axios.get(this.url, {
             params
