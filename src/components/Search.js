@@ -10,7 +10,6 @@ const Search = () => {
     const handleSearchValue = e => {
         setSearchTerm(e.target.value)
         Store.setSearchTerm(e.target.value)
-        EventEmitter.dispatch('updateSearch')
     }
     const enterPressed = async e => {
         if (e.keyCode === 13) {
