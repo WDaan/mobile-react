@@ -1,26 +1,14 @@
-class Store {
-    constructor() {
-        this.state = {
-            movies: null,
-            searchTerm: ''
-        }
-    }
+import { atom } from 'recoil'
 
-    setMovies(movies) {
-        this.state.movies = movies
-    }
-
-    getMovies() {
-        return this.state.movies
-    }
-
-    getSearchTerm() {
-        return this.state.searchTerm
-    }
-
-    setSearchTerm(searchTerm) {
-        this.state.searchTerm = searchTerm
-    }
-}
-
-export default new Store()
+export const searchTerm = atom({
+    key: 'searchTerm',
+    default: ''
+})
+export const movies = atom({
+    key: 'movies',
+    default: null
+})
+export const hasSearchValue = atom({
+    key: 'hasSearchValue',
+    default: false
+})

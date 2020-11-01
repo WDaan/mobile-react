@@ -1,21 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { RecoilRoot } from 'recoil'
 import './styles/index.css'
 import App from './App'
 
-const renderReact = () => {
-    ReactDOM.render(
-        <React.StrictMode>
+ReactDOM.render(
+    <React.StrictMode>
+        <RecoilRoot>
             <App />
-        </React.StrictMode>,
-        document.getElementById('root')
-    )
-}
-
-if (window.cordova) {
-    document.addEventListener('deviceready', () => {
-        renderReact()
-    }, false)
-} else {
-    renderReact()
-}
+        </RecoilRoot>
+    </React.StrictMode>,
+    document.getElementById('root')
+)

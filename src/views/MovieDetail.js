@@ -6,7 +6,7 @@ import Tag from '../components/Tag'
 
 const MovieDetail = () => {
 
-    const [movie, setMovie] = useState(null)
+    const [movie, setMovie] = useState()
     const { id } = useParams()
 
     useEffect(() => {

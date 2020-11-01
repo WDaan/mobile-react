@@ -1,30 +1,24 @@
-import React, { useState } from 'react'
-import Store from '../services/Store'
+import React from 'react'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { searchTerm, movies, hasSearchValue } from '../services/Store'
+
 import OMDb from '../services/OMDb'
-import EventEmitter from '../services/EventEmitter'
 
 const Search = () => {
 
-    const [searchTerm, setSearchTerm] = useState(Store.getSearchTerm())
+    const [search, setSearch] = useRecoilState(searchTerm)
+    let setMovies = useSetRecoilState(movies)
+    let setHasSearchValue = useSetRecoilState(hasSearchValue)
 
-    const handleSearchValue = e => {
-        setSearchTerm(e.target.value)
-        Store.setSearchTerm(e.target.value)
-    }
-    const enterPressed = async e => {
-        if (e.keyCode === 13) {
-            EventEmitter.dispatch('startSearch')
-            const res = await OMDb.searchMovie(searchTerm)
-            Store.setMovies(res)
-            EventEmitter.dispatch('searchComplete')
-        }
-    }
+    const startSearch = async e => {
+        //check if search came from enter
+        if (e.keyCode && e.keyCode !== 13) return
 
-    const startSearch = async () => {
-        EventEmitter.dispatch('startSearch')
-        const res = await OMDb.searchMovie(searchTerm)
-        Store.setMovies(res)
-        EventEmitter.dispatch('searchComplete')
+        //check if searchterm exists and has a value
+        if (!search) return setHasSearchValue(false)
+        
+        setHasSearchValue(true)
+        setMovies(await OMDb.searchMovie(search))
     }
 
     return (
@@ -32,9 +26,9 @@ const Search = () => {
             <div className='fixed w-full bottom-0 flex justify-between bg-white'>
                 <input
                     className='flex-grow m-2 py-2 px-4 mr-1 rounded-full border border-gray-300 bg-gray-200 resize-none outline-none'
-                    onChange={handleSearchValue}
-                    onKeyDown={enterPressed}
-                    value={searchTerm}
+                    onChange={e => setSearch(e.target.value)}
+                    onKeyDown={startSearch}
+                    value={search}
                     placeholder='Search'
                 >
                 </input>

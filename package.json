@@ -1,11 +1,7 @@
 {
-    "name": "io.wdaan.tools",
-    "displayName": "WDaan - OMDb",
-    "version": "1.0.0",
-    "description": "Search movies powered by OMDb",
-    "author": "Daan Wijns",
-    "main": "index.js",
-    "homepage": "./",
+    "name": "mobile-react",
+    "version": "0.1.0",
+    "private": true,
     "scripts": {
         "start": "npm run watch:css && react-scripts start",
         "build": "npm run watch:css && react-scripts build",
@@ -29,16 +25,14 @@
             "last 1 safari version"
         ]
     },
-    "keywords": [
-        "ecosystem:cordova"
-    ],
     "dependencies": {
         "axios": "^0.20.0",
         "bootstrap": "^4.5.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "3.4.1"
+        "react-scripts": "3.4.1",
+        "recoil": "^0.1.2"
     },
     "devDependencies": {
         "autoprefixer": "^9.8.6",
