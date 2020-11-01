@@ -1,7 +1,11 @@
 {
-    "name": "mobile-react",
-    "version": "0.1.0",
-    "private": true,
+    "name": "io.wdaan.tools",
+    "displayName": "WDaan - OMDb",
+    "version": "1.0.0",
+    "description": "Search movies powered by OMDb",
+    "author": "Daan Wijns",
+    "main": "index.js",
+    "homepage": "./",
     "scripts": {
         "start": "npm run watch:css && react-scripts start",
         "build": "npm run watch:css && react-scripts build",
